@@ -2,7 +2,7 @@ require 'redmine'
 require_dependency 'application_controller'
 class ApplicationController < ActionController::Base
   unloadable
-  before_filter :_enable_session_from_redmine_plugin
+  before_action :_enable_session_from_redmine_plugin
   alias_method :logout_user_without_spectator, :logout_user
   def logout_user
     session[:spectator] = nil

@@ -1,6 +1,6 @@
 class SpectatorController < ApplicationController
   unloadable
-  before_filter :require_login, :check_page_access
+  before_action :require_login, :check_page_access
 
   def index
     @all_users = User.order('login').select{|u| u.active? }
